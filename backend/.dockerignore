@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+logs/
+tests/
+app/static/
+jobs.db
+satellite.db
+ChangeFormer/checkpoints/
+loveda_segformer_b2/
+models/
+.git/
+.gitignore
+README.md
+Dockerfile
+.dockerignore

@@ -1,0 +1,34 @@
+# Satellite Change Detection — full stack
+#   docker compose up --build
+#
+# Model weights stay on the host (bind-mounted read-only) so the images
+# stay small; uploads/outputs and the job store live in named volumes.
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DEVICE: ${DEVICE:-cpu}
+      MAX_WORKERS: ${MAX_WORKERS:-1}
+      JOBS_DB_PATH: /app/data/jobs.db
+    volumes:
+      - ./backend/ChangeFormer/checkpoints:/app/ChangeFormer/checkpoints:ro
+      - ./backend/loveda_segformer_b2:/app/loveda_segformer_b2:ro
+      - ./backend/models:/app/models:ro
+      - satellite_static:/app/app/static
+      - satellite_data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  satellite_static:
+  satellite_data:

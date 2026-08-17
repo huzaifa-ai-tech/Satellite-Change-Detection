@@ -1,0 +1,106 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Install logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetypes.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.roproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific
+backend/app/static/uploads/*
+backend/app/static/outputs/*
+backend/*.log
+backend/logs/*.log
+logs/
+backend/satellite.db
+backend/satellite.db-journal
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.log
+
+# Model weights (large files)
+backend/models/*.pt
+backend/models/*.bin
+backend/models/*.safetensors
+backend/models/*.onnx
+backend/models/training_data/
+
+# Job store (runtime data)
+backend/jobs.db
+backend/jobs.db-journal
+
+# SegFormer weights (large files)
+backend/loveda_segformer_b2/
+
+# ChangeFormer checkpoints (large files)
+backend/ChangeFormer/checkpoints/
+
+# Keep directory structure
+!.gitkeep
